@@ -1,0 +1,30 @@
+{% extends "layouts/default.njk" %}
+{% import "components/button.njk" as button %}
+
+{% block main %}
+    <section>
+        <div class="title__container--center">
+            <h1>{{ title | safe }}</h1>
+        </div>
+        <hr>
+    </section>
+
+    <section>
+        <div class="past-projects__container--2-items">
+            <ul>
+                <li>Korenmarkt 12, 9000 Ghent, Belgium</li>
+                <li>Address</li>
+            </ul>
+            <ul>
+                <li>info@clean.be</li>
+                <li>Email</li>
+            </ul>
+            <ul>
+                <li>+32 09 45 78 12</li>
+                <li>Phone</li>
+            </ul>
+        </div>
+        {{ button.button("Send us an email", "#") }}
+    </section>
+    <img src="/assets/imgs/Rectangle 2_29.png" alt="" class="wide-img-container">
+{% endblock main %}

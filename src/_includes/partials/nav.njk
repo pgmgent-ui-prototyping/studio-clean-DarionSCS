@@ -1,0 +1,13 @@
+<header>
+  <nav>
+    <p><a href="/">Clean</a></p>
+
+    <ul>
+      {% for item in collections.navItems | sortByOrder %}
+      <li>
+        <a href="{{ item.url }}"> {{ item.data.pageTitle }} </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

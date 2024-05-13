@@ -1,0 +1,53 @@
+{% extends "layouts/default.njk" %}
+
+{% block main %}
+    <section>
+        <div class="title__container">
+            <h1>{{ title | safe }}</h1>
+            {% import "components/button.njk" as button %}
+            {{ button.button("Our projects", "/projects") }}
+        </div>
+        <hr>
+        {% import "partials/img-layout_macro.njk" as imgLayout %}
+        {{ imgLayout.img_layout("/assets/imgs/Image 1_2.png", "/assets/imgs/Image 2_2.png") }}
+    </section>
+
+
+    <section>
+        <div class="section__title">
+            Our projects
+        </div>
+        <div class="past-projects__container">
+            <ul>
+                <li>21.02.2024</li>
+                <li>Uber</li>
+                <li>Rebranding</li>
+            </ul>
+            <ul>
+                <li>12.01.2024</li>
+                <li>Stonks</li>
+                <li>Webdesign</li>
+            </ul>
+            <ul>
+                <li>06.11.2023</li>
+                <li>Gmail</li>
+                <li>Webdevelopment</li>
+            </ul>
+        </div>
+        {{ button.button("See all our work", "/projects") }}
+    </section>
+
+    <section>
+        <div class="section__title">
+            Read our latest news
+        </div>
+        {% import "partials/grid_macro.njk" as grid %}
+        {{ grid.gridLayout(collections, "blog", 3) }}
+        {{ button.button("Read our blog", "/blog") }}
+    </section>
+
+
+
+
+
+{% endblock main %}

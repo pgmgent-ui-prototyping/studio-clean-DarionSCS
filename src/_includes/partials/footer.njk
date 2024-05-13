@@ -1,0 +1,19 @@
+<footer>
+    <p>Clean</p>
+    <ul>
+      {% for item in collections.navItems | sortByOrder %}
+      <li>
+        <a href="{{ item.url }}"> {{ item.data.pageTitle }} </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <ul>
+      <li>
+        <a href="/policies/cookie-policy">Cookie Policy</a>
+      </li>
+      <li>
+        <a href="/policies/privacy-policy">Privacy Policy</a>
+      </li>
+    </ul>
+</footer>

@@ -1,0 +1,25 @@
+{# 1st parameter is the collections service, because it isn't recognised in macros. 
+2nd is name of the collection, 
+3th is incase I only want a select few. If 3th isn't given it'll take the default amount #}
+
+{% macro gridLayout(collections, name, limit=collections[name].length) %}
+    <div class="grid__container">
+        {% for item in collections[name] %}
+            {% if loop.index <= limit %}
+                <div>
+                {% if item.data.url %}
+                    <a href="/{{name}}{{ item.data.url }}">
+                        <img src="{{ item.data.imgThumbnail }}" alt="image">
+                        <div class="grid__title">{{ item.data.title }}</div>
+                        <p>{{ item.data.description }}</p>
+                    </a>
+                    {% else %}
+                        <img src="{{ item.data.imgThumbnail }}" alt="image">
+                        <div class="grid__title">{{ item.data.title }}</div>
+                        <p>{{ item.data.description }}</p>
+                {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endmacro %}

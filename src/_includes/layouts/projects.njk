@@ -1,0 +1,14 @@
+{% extends "layouts/default.njk" %}
+
+{% block main %}
+    <section>
+        <div class="title__container--center">
+            <h1>{{ title | safe }}</h1>
+        </div>
+        <hr>
+    </section>
+    <section>
+        {% import "partials/grid_macro.njk" as grid %}
+        {{ grid.gridLayout(collections, "projects") }}
+    </section>
+{% endblock main %}

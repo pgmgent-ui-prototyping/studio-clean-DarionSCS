@@ -1,0 +1,22 @@
+{% extends "layouts/default.njk" %}
+
+{% block main %}
+    <section>
+        <div class="title__container--center">
+            <h1>{{ title | safe }}</h1>
+        </div>
+        {% block goBack %}
+           {% if not (page.fileSlug == "cookie-policy" or page.fileSlug == "privacy-policy") %} {# ensures the policies don't receive a go back button by checking the page slug #}
+                {% include "components/go-back.njk"%}
+            {% endif %}
+        {% endblock goBack %}
+        <hr>
+    </section>
+
+    <section class="article__section">
+        <article>
+            {{ content | safe }}
+        </article>
+    </section>
+
+{% endblock main %}

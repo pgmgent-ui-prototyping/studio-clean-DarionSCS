@@ -1,0 +1,22 @@
+{% extends "layouts/default.njk" %}
+
+{% block main %}
+    <section>
+        <div class="title__container">
+            <h1>{{ title | safe }}</h1>
+            {% import "components/button.njk" as button %}
+            {{ button.button("Contact us", "/contact") }}
+        </div>
+        <hr>
+        {% import "partials/img-layout_macro.njk" as imgLayout %}
+        {{ imgLayout.img_layout("/assets/imgs/Image 1_1.png", "/assets/imgs/Image 1_2.png") }}
+        {{ imgLayout.img_layout("/assets/imgs/Image 2_1.png", "/assets/imgs/Image 2_2.png") }}
+    </section>
+    <section>
+        <div class="section__title">
+            <h2>Meet the team</h2>
+        </div>
+        {% import "partials/grid_macro.njk" as grid %}
+        {{ grid.gridLayout(collections, "team") }}
+    </section>
+{% endblock main %}
